@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:api_test/page/detailpages/playersdetali.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:http/http.dart' as http;
@@ -92,14 +93,22 @@ class _PlayerPageState extends State<PlayerPage> {
       ),
       body: Column(
         children: [
-          TextField(
-            decoration: const InputDecoration(
-              hintText: '원하는 선수의 이름을 입력해 주세요.',
-              border: OutlineInputBorder(),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+              decoration: const InputDecoration(
+                labelText: '선수 이름',
+                hintText: '원하는 선수의 이름을 입력해 주세요.',
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(10),
+                  ),
+                ),
+              ),
+              onChanged: (value) {
+                _filterPlayers(value);
+              },
             ),
-            onChanged: (value) {
-              _filterPlayers(value);
-            },
           ),
           Expanded(
             child: isLoading

@@ -86,14 +86,19 @@ class _TeamPageState extends State<TeamPage> {
       ),
       body: Column(
         children: [
-          TextField(
-            decoration: const InputDecoration(
-              hintText: '팀의 약칭으로 검색해 주세요.',
-              border: OutlineInputBorder(),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+              decoration: const InputDecoration(
+                labelText: '팀의 약칭',
+                hintText: '팀의 약칭으로 검색해 주세요.',
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(10))),
+              ),
+              onChanged: (value) {
+                _filterTeams(value);
+              },
             ),
-            onChanged: (value) {
-              _filterTeams(value);
-            },
           ),
           Expanded(
             child: isLoading
