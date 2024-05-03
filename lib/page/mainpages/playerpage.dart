@@ -135,16 +135,60 @@ class _PlayerPageState extends State<PlayerPage> {
                               ),
                             );
                           },
-                          child: Container(
-                            decoration: BoxDecoration(
-                                color: Colors.grey[200],
-                                borderRadius: BorderRadius.circular(10)),
-                            child: ListTile(
-                              title: Text(
-                                  "${filteredPlayers[index].first_name} ${filteredPlayers[index].last_name}"),
-                              subtitle: Text(
-                                  "등번호: ${filteredPlayers[index].jersey_number}"),
-                            ),
+                          child: Stack(
+                            children: [
+                              Container(
+                                clipBehavior: Clip.hardEdge,
+                                height: 50,
+                                decoration: BoxDecoration(
+                                    color: Colors.grey[200],
+                                    borderRadius: BorderRadius.circular(10)),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.only(left: 10),
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Text(
+                                            '${filteredPlayers[index].first_name} ${filteredPlayers[index].last_name}',
+                                            style: const TextStyle(
+                                                fontSize: 25,
+                                                fontWeight: FontWeight.w600),
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(right: 30),
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Transform.scale(
+                                            scale: 3,
+                                            child: Transform.translate(
+                                              offset: const Offset(0, 1.7),
+                                              child: Text(
+                                                filteredPlayers[index]
+                                                    .jersey_number,
+                                                style: const TextStyle(
+                                                    fontSize: 20,
+                                                    fontWeight:
+                                                        FontWeight.w600),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       );
