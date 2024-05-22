@@ -139,7 +139,7 @@ class _PlayerPageState extends State<PlayerPage> {
                             children: [
                               Container(
                                 clipBehavior: Clip.hardEdge,
-                                height: 50,
+                                height: 70,
                                 decoration: BoxDecoration(
                                     color: Colors.grey[200],
                                     borderRadius: BorderRadius.circular(10)),
@@ -156,7 +156,7 @@ class _PlayerPageState extends State<PlayerPage> {
                                           Text(
                                             '${filteredPlayers[index].first_name} ${filteredPlayers[index].last_name}',
                                             style: const TextStyle(
-                                                fontSize: 25,
+                                                fontSize: 23,
                                                 fontWeight: FontWeight.w600),
                                           )
                                         ],
@@ -171,7 +171,7 @@ class _PlayerPageState extends State<PlayerPage> {
                                           Transform.scale(
                                             scale: 3,
                                             child: Transform.translate(
-                                              offset: const Offset(0, 1.7),
+                                              offset: const Offset(0, 4.5),
                                               child: Text(
                                                 filteredPlayers[index]
                                                     .jersey_number,

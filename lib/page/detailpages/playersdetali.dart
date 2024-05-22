@@ -1,4 +1,3 @@
-import 'package:api_test/page/detailpages/teamsdetail.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
